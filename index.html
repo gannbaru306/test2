@@ -3,12 +3,27 @@
     <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async defer></script>
   </head>
   <body>
-    <div class="line-it-button"
-     data-lang="ja"
-     data-type="share-a"
-     data-url="https://example.com/"
-     style="display: none;">
-</div>
+<button id="lineFullBtn" style="
+  width: 100vw;
+  height: 100vh;
+  background: #06C755;
+  color: white;
+  font-size: 8vw;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+">
+LINEで送る
+</button>
+
+<script>
+document.getElementById("lineFullBtn").onclick = function() {
+  const url = encodeURIComponent("https://example.com");
+  location.href = "https://social-plugins.line.me/lineit/share?url=" + url;
+};
+</script>
   </body>
 </html>
 
